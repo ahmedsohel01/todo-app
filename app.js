@@ -6,7 +6,8 @@ const todoList = document.querySelector('.todo-list');
 // Event Listener
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    // ToDo Div
+    if (input.value!=='') {
+        // ToDo Div
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('todo');
     // ToDo Items
@@ -25,10 +26,12 @@ form.addEventListener('submit', function(e) {
     // Get ToDo Value
     const inputValue = input.value;
     todoItem.innerHTML = inputValue
-
     // Show Data
     todoList.appendChild(todoDiv)
     input.value = '';
+    }else {
+        alert("Add Some Text")
+    }
 })
 
 todoList.addEventListener('click', function(e){
